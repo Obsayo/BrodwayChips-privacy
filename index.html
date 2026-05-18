@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polityka Prywatności — PokerDesk</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0d0f14;
+      --surface:  #13161d;
+      --border:   #1f2430;
+      --accent:   #c8922a;
+      --accent2:  #e8b84b;
+      --text:     #d4cfc8;
+      --muted:    #7a7570;
+      --heading:  #ede8e0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.8;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+
+    /* Tło — subtelna siatka */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(200,146,42,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,146,42,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 28px 100px;
+    }
+
+    /* ── Header ─────────────────────────── */
+    header {
+      text-align: center;
+      margin-bottom: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .logo-icon {
+      width: 48px; height: 48px;
+      border: 1.5px solid var(--accent);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      background: rgba(200,146,42,0.08);
+    }
+
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--heading);
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 400;
+      color: var(--heading);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .meta span {
+      color: var(--accent);
+    }
+
+    /* ── Sekcje ─────────────────────────── */
+    section {
+      margin-bottom: 52px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--accent2);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: attr(data-n);
+      font-family: 'Source Serif 4', serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      min-width: 24px;
+    }
+
+    p { margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 14px 0;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 8px 0 8px 24px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '♠';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 11px;
+      top: 10px;
+    }
+
+    /* ── Ramki info ─────────────────────── */
+    .note {
+      background: rgba(200,146,42,0.06);
+      border: 1px solid rgba(200,146,42,0.2);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .note strong {
+      color: var(--accent2);
+      display: block;
+      margin-bottom: 6px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .disclaimer {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── Footer ─────────────────────────── */
+    footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    a { color: var(--accent2); }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-wrap">
+      <div class="logo-icon">♠</div>
+      <span class="logo-name">PokerDesk</span>
+    </div>
+    <h1>Polityka Prywatności</h1>
+    <p class="meta">Ostatnia aktualizacja: <span>maj 2025</span> &nbsp;·&nbsp; Wersja 1.0</p>
+  </header>
+
+  <!-- 1 -->
+  <section>
+    <h2 data-n="01">Informacje ogólne</h2>
+    <p>Niniejsza Polityka Prywatności opisuje zasady przetwarzania danych przez aplikację mobilną <strong>PokerDesk: Home Game Manager</strong> (dalej: „Aplikacja"), dostępną na platformie Android za pośrednictwem sklepu Google Play.</p>
+    <p>Deweloper Aplikacji: <strong>Obsayo</strong><br>
+    Kontakt: <a href="mailto:oh.obsayo@gmail.com">oh.obsayo@gmail.com</a><br>
+    Kraj: Polska</p>
+    <div class="disclaimer">
+      PokerDesk jest narzędziem informatycznym służącym wyłącznie do zarządzania domowymi grami towarzyskimi (kalkulacja żetonów, zegar gry, rozliczenie). Aplikacja nie organizuje gier hazardowych, nie pośredniczy w grach o pieniądze ani nie świadczy żadnych usług finansowych.
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2 data-n="02">Jakie dane zbiera aplikacja</h2>
+    <p>Aplikacja przetwarza wyłącznie dane wprowadzone dobrowolnie przez użytkownika, przechowywane lokalnie na urządzeniu:</p>
+    <ul>
+      <li><strong>Nazwy graczy</strong> — etykiety (pseudonimy, imiona lub dowolny tekst) przypisywane do profili graczy. Nie muszą to być prawdziwe dane osobowe.</li>
+      <li><strong>Konfiguracje zestawów żetonów</strong> — kolory, ilości, wartości.</li>
+      <li><strong>Ustawienia aplikacji</strong> — wybrany język, motyw wizualny, preferencje zegara blindów.</li>
+      <li><strong>Historia sesji</strong> — wyniki rozegranych partii, statystyki graczy.</li>
+    </ul>
+    <div class="note">
+      <strong>Ważne</strong>
+      Wszystkie powyższe dane przechowywane są wyłącznie lokalnie na urządzeniu użytkownika (Android SharedPreferences / pamięć wewnętrzna). Deweloper nie ma do nich dostępu i nie są one w żaden sposób przesyłane na zewnętrzne serwery.
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2 data-n="03">Czego aplikacja NIE zbiera</h2>
+    <ul>
+      <li>Danych osobowych identyfikujących użytkownika (imię, nazwisko, adres, PESEL)</li>
+      <li>Danych finansowych, numerów kart płatniczych</li>
+      <li>Danych lokalizacyjnych (GPS)</li>
+      <li>Kontaktów z książki adresowej</li>
+      <li>Zdjęć ani plików multimedialnych (poza funkcją opisaną w §6)</li>
+      <li>Identyfikatorów urządzenia wysyłanych na zewnątrz</li>
+      <li>Danych analitycznych ani raportów o błędach wysyłanych do dewelopera</li>
+    </ul>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2 data-n="04">Funkcja serwera WiFi TV</h2>
+    <p>Aplikacja zawiera opcjonalną funkcję „WiFi TV" umożliwiającą wyświetlanie zegara gry na ekranie telewizora lub innego urządzenia w tej samej sieci lokalnej.</p>
+    <ul>
+      <li>Serwer HTTP uruchamiany jest wyłącznie w obrębie lokalnej sieci WiFi użytkownika (LAN).</li>
+      <li>Aplikacja nie nawiązuje żadnych połączeń z internetem zewnętrznym za pośrednictwem tej funkcji.</li>
+      <li>Żadne dane nie są przesyłane poza sieć domową użytkownika.</li>
+      <li>Funkcja jest całkowicie opcjonalna i domyślnie wyłączona.</li>
+    </ul>
+    <p>Uprawnienie <code>android.permission.INTERNET</code> w manifeście aplikacji służy wyłącznie do obsługi tego lokalnego serwera HTTP.</p>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2 data-n="05">Funkcja udostępniania wyników</h2>
+    <p>Aplikacja umożliwia udostępnienie podsumowania podziału żetonów (tzw. „split") za pomocą systemowego okna udostępniania systemu Android (share sheet).</p>
+    <ul>
+      <li>Udostępnianie odbywa się wyłącznie za pośrednictwem mechanizmu systemowego Android — użytkownik samodzielnie wybiera aplikację docelową (np. SMS, e-mail, komunikator).</li>
+      <li>Deweloper PokerDesk nie ma dostępu do udostępnianych danych ani nie przechowuje ich na własnych serwerach.</li>
+      <li>Funkcja jest uruchamiana wyłącznie na wyraźne żądanie użytkownika.</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2 data-n="06">Pliki graficzne i treści użytkownika (funkcja planowana)</h2>
+    <p>W przyszłych wersjach aplikacja może udostępnić opcję wgrania własnego logo turnieju lub zdjęcia (funkcja premium). W takim przypadku:</p>
+    <ul>
+      <li>Dostęp do galerii zdjęć zostanie zrealizowany przez systemowy selektor plików Android — aplikacja nie uzyska dostępu do całej galerii.</li>
+      <li>Wgrane pliki graficzne przechowywane będą wyłącznie lokalnie na urządzeniu.</li>
+      <li>Użytkownik ponosi wyłączną odpowiedzialność za treść wgrywanych plików. Aplikacja nie weryfikuje ani nie moderuje zawartości graficznej.</li>
+      <li>Niedozwolone jest wgrywanie treści nielegalnych, naruszających prawa osób trzecich lub niezgodnych z zasadami Google Play.</li>
+    </ul>
+    <p>O udostępnieniu tej funkcji użytkownicy zostaną poinformowani poprzez aktualizację aplikacji i niniejszej Polityki Prywatności.</p>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <h2 data-n="07">Weryfikacja lokalizacji (funkcja planowana)</h2>
+    <p>W przyszłych wersjach aplikacja może jednorazowo weryfikować kraj, z którego korzysta użytkownik, w celu zapewnienia zgodności z lokalnymi przepisami prawa dotyczącymi aplikacji o tematyce gier karciarskich.</p>
+    <ul>
+      <li>Weryfikacja odbędzie się wyłącznie po udzieleniu przez użytkownika wyraźnej zgody (osobny komunikat systemowy).</li>
+      <li>Dane lokalizacyjne nie będą przechowywane ani przesyłane do zewnętrznych serwerów.</li>
+      <li>Funkcja będzie służyć wyłącznie do określenia kraju — nie do śledzenia ruchów użytkownika.</li>
+    </ul>
+    <p>Niniejsza Polityka zostanie zaktualizowana przed wdrożeniem tej funkcji.</p>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2 data-n="08">Reklamy (funkcja planowana)</h2>
+    <p>W wersji bezpłatnej (freemium) planowane jest wyświetlanie reklam za pośrednictwem sieci reklamowej (np. Google AdMob). W takim przypadku:</p>
+    <ul>
+      <li>Sieć reklamowa może zbierać dane techniczne urządzenia zgodnie z własną polityką prywatności.</li>
+      <li>Użytkownicy wersji premium nie będą wyświetlani reklamy.</li>
+      <li>Niniejsza Polityka zostanie zaktualizowana przed uruchomieniem reklam, z podaniem nazwy konkretnej sieci reklamowej i linku do jej polityki.</li>
+    </ul>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <h2 data-n="09">Pliki cookie i technologie śledzące</h2>
+    <p>Aplikacja mobilna PokerDesk nie używa plików cookie ani żadnych innych technologii śledzenia użytkownika.</p>
+  </section>
+
+  <!-- 10 -->
+  <section>
+    <h2 data-n="10">Prawa użytkownika</h2>
+    <p>Ponieważ aplikacja nie przesyła danych osobowych na zewnętrzne serwery, wszystkie dane użytkownika są dostępne bezpośrednio na jego urządzeniu. Użytkownik może:</p>
+    <ul>
+      <li><strong>Usunąć wszystkie dane</strong> — poprzez odinstalowanie aplikacji lub użycie opcji „Wyczyść dane" w ustawieniach systemu Android.</li>
+      <li><strong>Eksportować dane</strong> — poprzez funkcję udostępniania wyników dostępną w aplikacji.</li>
+      <li><strong>Skontaktować się z deweloperem</strong> — w sprawie pytań dotyczących prywatności: <a href="mailto:oh.obsayo@gmail.com">oh.obsayo@gmail.com</a></li>
+    </ul>
+  </section>
+
+  <!-- 11 -->
+  <section>
+    <h2 data-n="11">Bezpieczeństwo danych</h2>
+    <p>Dane przechowywane lokalnie na urządzeniu są chronione przez mechanizmy bezpieczeństwa systemu Android (izolacja aplikacji, szyfrowanie pamięci urządzenia jeśli włączone przez użytkownika). Deweloper nie ma technicznej możliwości dostępu do tych danych.</p>
+  </section>
+
+  <!-- 12 -->
+  <section>
+    <h2 data-n="12">Dzieci</h2>
+    <p>Aplikacja nie jest skierowana do osób poniżej 18. roku życia. Jeśli masz informacje, że osoba niepełnoletnia korzysta z aplikacji, skontaktuj się z nami pod adresem <a href="mailto:oh.obsayo@gmail.com">oh.obsayo@gmail.com</a>.</p>
+  </section>
+
+  <!-- 13 -->
+  <section>
+    <h2 data-n="13">Zmiany Polityki Prywatności</h2>
+    <p>Deweloper zastrzega sobie prawo do aktualizacji niniejszej Polityki Prywatności. O istotnych zmianach użytkownicy zostaną poinformowani poprzez:</p>
+    <ul>
+      <li>Aktualizację daty „Ostatnia aktualizacja" na górze strony</li>
+      <li>Informację w opisie aktualizacji aplikacji w Google Play</li>
+    </ul>
+    <p>Dalsze korzystanie z aplikacji po opublikowaniu zmian oznacza akceptację nowej Polityki.</p>
+  </section>
+
+  <!-- 14 -->
+  <section>
+    <h2 data-n="14">Kontakt</h2>
+    <p>W sprawie pytań dotyczących niniejszej Polityki Prywatności prosimy o kontakt:</p>
+    <div class="note">
+      <strong>Deweloper</strong>
+      Obsayo<br>
+      E-mail: <a href="mailto:oh.obsayo@gmail.com">oh.obsayo@gmail.com</a><br>
+      Kraj: Polska<br>
+      Repozytorium: <a href="https://github.com/Obsayo/PokerDesk" target="_blank">github.com/Obsayo/PokerDesk</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Obsayo · PokerDesk: Home Game Manager</p>
+    <p style="margin-top:8px;">
+      <a href="https://github.com/Obsayo/PokerDesk">GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:oh.obsayo@gmail.com">Kontakt</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
