@@ -1,2 +1,2 @@
-# BrodwayChips-privacy
-Privacy Policy for BrodwayChips app
+# BroadwayChips-privacy
+Privacy Policy for BroadwayChips app
