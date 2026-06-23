@@ -1,2 +1,2 @@
-# PokerDesk-privacy
-Privacy Policy for PokerDesk app
+# BrodwayChips-privacy
+Privacy Policy for BrodwayChips app
